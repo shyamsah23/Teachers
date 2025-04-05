@@ -12,4 +12,8 @@ public interface TeacherMapper {
  //   @Select("Select * from Teachers")
     List<Teacher> getAllTeachers();
 
+    Teacher getTeacherById(int id);
+
+    int addTeacher(Teacher teacher);
+
 }

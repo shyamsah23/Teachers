@@ -17,4 +17,14 @@ public class TeacherService {
     {
         return teacherMapper.getAllTeachers();
     }
+
+    public Teacher getTeacherById(int id)
+    {
+        return teacherMapper.getTeacherById(id);
+    }
+
+    public int addTeacher(Teacher teacher)
+    {
+        return teacherMapper.addTeacher(teacher);
+    }
 }

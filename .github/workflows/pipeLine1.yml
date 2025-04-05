@@ -1,4 +1,4 @@
-name: PR Maven Build & Test
+name: PipeLine 1
 
 on:
   pull_request:
