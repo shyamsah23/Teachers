@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: Teachers
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/Teachers_db
+    username: root
+    password: 421605
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+
+server:
+  port: 8081
