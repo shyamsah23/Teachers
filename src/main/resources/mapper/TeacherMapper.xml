@@ -13,8 +13,16 @@
 
     <select id="getAllTeachers" resultMap="TeacherResultMap">
         select * from Teachers;
-
     </select>
+
+    <select id="getTeacherById" resultMap="TeacherResultMap">
+            select * from Teachers where id= #{id};
+    </select>
+
+    <insert id="addTeacher" parameterType="com.example.Teachers.Model.Teacher">
+        Insert into teachers (id,name,email,phoneNumber)
+        values (#{id},#{name},#{email},#{phoneNumber})
+    </insert>
 
 </mapper>
 
