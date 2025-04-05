@@ -2,8 +2,11 @@ package com.example.Teachers.controller;
 
 import com.example.Teachers.Model.Teacher;
 import com.example.Teachers.Service.TeacherService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +35,10 @@ public class TeacherController {
     {
         Integer rowEffected = teacherService.addTeacher(teacher);
         return ResponseEntity.ok(rowEffected);
+    }
+    @GetMapping("/csrf")
+    public CsrfToken getToken(HttpServletRequest request){
+        return (CsrfToken) request.getAttribute("_csrf");
     }
 
 }
