@@ -21,21 +21,23 @@ public class WebSecurityConfig {
                 csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(
                         request -> request.
-                                requestMatchers("auth/**").permitAll().
+                                requestMatchers("auth/**","/v3/api-docs/**",
+                                        "/swagger-ui/**",
+                                        "/swagger-ui.html").permitAll().
                                 anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
     }
 
-//    @Bean
-//    public UserDetailsService userDetailsService(){
-//        UserDetails anant=
-//                User.withUsername("anant")
-//                        .password("{noop}password")
-//                        .roles("USER")
-//                        .build();
-//
-//        return new InMemoryUserDetailsManager(anant);
-//    }
+    @Bean
+    public UserDetailsService userDetailsService(){
+        UserDetails anant=
+                User.withUsername("anant")
+                        .password("{noop}password")
+                        .roles("USER")
+                        .build();
+
+        return new InMemoryUserDetailsManager(anant);
+    }
 }
