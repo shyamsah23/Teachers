@@ -11,6 +11,7 @@ public class TeachersApplication {
 		SpringApplication.run(TeachersApplication.class, args);
 		System.out.println("Hello");
 		System.out.println("Hello-5");
+		System.out.println("Hello-6");
 	}
 
 }
